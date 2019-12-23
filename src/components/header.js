@@ -1,22 +1,47 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import css from '../styles/header.module.less'
 
 export default () => (
-  <header>
-    <h4>My Blog</h4>
+  <header className={css.header}>
+    <h1 className={css.title}>My Blog</h1>
     <nav>
-      <ul>
+      <ul className={css.navList}>
         <li>
-          <Link to="/">Main</Link>
+          <Link
+            className={css.navItem}
+            activeClassName={css.navItem__active}
+            to="/"
+          >
+            Main
+          </Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <Link
+            className={css.navItem}
+            activeClassName={css.navItem__active}
+            to="/blog"
+          >
+            Blog
+          </Link>
         </li>
         <li>
-          <Link to="/about">About Me</Link>
+          <Link
+            className={css.navItem}
+            activeClassName={css.navItem__active}
+            to="/about"
+          >
+            About Me
+          </Link>
         </li>
         <li>
-          <Link to="/contacts">My Contacts</Link>
+          <Link
+            className={css.navItem}
+            activeClassName={css.navItem__active}
+            to="/contacts"
+          >
+            My Contacts
+          </Link>
         </li>
       </ul>
     </nav>

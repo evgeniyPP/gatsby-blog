@@ -1,11 +1,11 @@
-import React, { Fragment } from "react"
-import { Link } from "gatsby"
-import Layout from "../components/layout"
+import React, { Fragment } from 'react'
+import { Link } from 'gatsby'
+import Layout from '../components/layout'
 
 export default () => (
   <Fragment>
     <Layout>
-      <h1>Hello.</h1>
+      <h1>Hello!</h1>
       <h2>
         I'm <Link to="/about">Eugene</Link>. And I do know React
       </h2>

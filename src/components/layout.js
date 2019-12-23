@@ -1,12 +1,15 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Header from './header'
 import Footer from './footer'
 import '../styles/index.less'
+import css from '../styles/layout.module.less'
 
 export default ({ children }) => (
-  <Fragment>
-    <Header />
-    {children}
+  <div className={css.container}>
+    <div className={css.content}>
+      <Header />
+      {children}
+    </div>
     <Footer />
-  </Fragment>
+  </div>
 )
