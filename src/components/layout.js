@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './header'
 import Footer from './footer'
-import '../styles/index.less'
+import '../styles/basic.less'
 import css from '../styles/layout.module.less'
 
 export default ({ children }) => (

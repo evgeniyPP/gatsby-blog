@@ -4,7 +4,7 @@ import css from '../styles/header.module.less'
 
 export default () => (
   <header className={css.header}>
-    <h1 className={css.title}>My Blog</h1>
+    <h1 className={css.title}>Евгений Петрянкин</h1>
     <nav>
       <ul className={css.navList}>
         <li>
@@ -13,7 +13,7 @@ export default () => (
             activeClassName={css.navItem__active}
             to="/"
           >
-            Main
+            Главная
           </Link>
         </li>
         <li>
@@ -22,7 +22,7 @@ export default () => (
             activeClassName={css.navItem__active}
             to="/blog"
           >
-            Blog
+            Блог
           </Link>
         </li>
         <li>
@@ -31,7 +31,7 @@ export default () => (
             activeClassName={css.navItem__active}
             to="/about"
           >
-            About Me
+            Обо мне
           </Link>
         </li>
         <li>
@@ -40,7 +40,7 @@ export default () => (
             activeClassName={css.navItem__active}
             to="/contacts"
           >
-            My Contacts
+            Контакты
           </Link>
         </li>
       </ul>

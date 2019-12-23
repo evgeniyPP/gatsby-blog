@@ -4,8 +4,8 @@ import Layout from '../components/layout'
 export default () => (
   <Fragment>
     <Layout>
-      <h3>Blog</h3>
-      <p>Posts will show up here</p>
+      <h2>Блог</h2>
+      <p>Тут должны быть посты...но как бы не</p>
     </Layout>
   </Fragment>
 )
