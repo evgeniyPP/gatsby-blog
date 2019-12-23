@@ -10,5 +10,15 @@ module.exports = {
     techologies:
       'HTML, CSS, vanilla JavaScript, React, Vue, Svelte, React Native'
   },
-  plugins: ['gatsby-plugin-less']
+  plugins: [
+    'gatsby-plugin-less',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`
+      }
+    },
+    'gatsby-transformer-remark'
+  ]
 }
