@@ -5,5 +5,10 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: 'Евгений Петрянкин',
+    techologies:
+      'HTML, CSS, vanilla JavaScript, React, Vue, Svelte, React Native'
+  },
   plugins: ['gatsby-plugin-less']
 }
