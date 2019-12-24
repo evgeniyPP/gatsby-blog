@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/layout'
+import Head from '../components/head'
 import css from '../styles/index.module.less'
 
 export default () => {
@@ -15,14 +16,13 @@ export default () => {
   `)
 
   return (
-    <Fragment>
-      <Layout>
-        <h1>Привет.</h1>
-        <h2>
-          Меня зовут Женя. <span className={css.iAmDev}>Я веб-разработчик</span>
-        </h2>
-        <p>Я знаю {data.site.siteMetadata.techologies} и т.д.</p>
-      </Layout>
-    </Fragment>
+    <Layout>
+      <Head title={'Главная'} />
+      <h1>Привет.</h1>
+      <h2>
+        Меня зовут Женя. <span className={css.iAmDev}>Я веб-разработчик</span>
+      </h2>
+      <p>Я знаю {data.site.siteMetadata.techologies} и т.д.</p>
+    </Layout>
   )
 }

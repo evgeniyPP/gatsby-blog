@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Layout from '../components/layout'
+import Head from '../components/head'
 
 export const query = graphql`
   query($slug: String!) {
@@ -20,7 +21,7 @@ export default props => {
   const options = {
     renderNode: {
       'embedded-asset-block': node => {
-        const src = node.data.target.fields.file["en-US"].url
+        const src = node.data.target.fields.file['en-US'].url
         const alt = node.data.target.fields.title['en-US']
         return <img src={src} alt={alt} />
       }
@@ -29,6 +30,7 @@ export default props => {
 
   return (
     <Layout>
+      <Head title={title} />
       <h2>{title}</h2>
       <p>{publishedDate}</p>
       {documentToReactComponents(body.json, options)}

@@ -11,6 +11,7 @@ module.exports = {
       'HTML, CSS, vanilla JavaScript, React, Vue, Svelte, React Native'
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
       options: {

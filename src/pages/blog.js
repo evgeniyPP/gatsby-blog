@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/layout'
+import Head from '../components/head'
 import css from '../styles/blog.module.less'
 
 export default () => {
@@ -39,11 +40,10 @@ export default () => {
     .reverse()
 
   return (
-    <Fragment>
-      <Layout>
-        <h2>Блог</h2>
-        <ul className={css.posts}>{posts}</ul>
-      </Layout>
-    </Fragment>
+    <Layout>
+      <Head title={'Блог'} />
+      <h2>Блог</h2>
+      <ul className={css.posts}>{posts}</ul>
+    </Layout>
   )
 }
