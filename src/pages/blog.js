@@ -6,16 +6,14 @@ import css from '../styles/blog.module.less'
 export default () => {
   const postsRes = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
         edges {
           node {
-            frontmatter {
-              title
-              date
-            }
-            excerpt
-            fields {
-              slug
+            title
+            slug
+            publishedDate(formatString: "DD/MM/YYYY")
+            shortDescription {
+              shortDescription
             }
           }
         }
@@ -23,16 +21,17 @@ export default () => {
     }
   `)
 
-  const posts = postsRes.allMarkdownRemark.edges
+  const posts = postsRes.allContentfulBlogPost.edges
     .map(edge => {
-      const { frontmatter, excerpt, fields } = edge.node
-      const { title, date } = frontmatter
+      const { title, slug, publishedDate, shortDescription } = edge.node
       return (
-        <li key={fields.slug} className={css.post}>
-          <Link to={`/blog/${fields.slug}`}>
+        <li key={slug} className={css.post}>
+          <Link to={`/blog/${slug}`}>
             <h4>{title}</h4>
-            <p className={css.post__date}>{date}</p>
-            <p className={css.post__excerpt}>{excerpt}</p>
+            <p className={css.post__date}>{publishedDate}</p>
+            <p className={css.post__excerpt}>
+              {shortDescription.shortDescription}
+            </p>
           </Link>
         </li>
       )
