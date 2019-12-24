@@ -1,20 +1,36 @@
 .posts {
   list-style-type: none;
+  margin-left: 0;
 }
 
-.post {
-  margin-bottom: 1.5rem;
-}
+.post a {
+  display: block;
+  background: #f4f4f4;
+  color: #000;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
 
-.post h4 {
-  font-size: 1.15rem;
-  display: inline-block;
-  margin-right: 0.85rem;
-  margin-bottom: 0.85rem;
+  h4 {
+    font-size: 1.15rem;
+    display: inline-block;
+    margin-right: 0.85rem;
+    margin-bottom: 0.85rem;
+    color: #333;
+  }
+
+  &:hover {
+    background: #e4e4e4;
+  }
 }
 
 .post__date {
   display: inline;
   font-size: 0.85rem;
   color: #999;
+}
+
+.post__excerpt {
+  font-size: 0.97rem;
 }

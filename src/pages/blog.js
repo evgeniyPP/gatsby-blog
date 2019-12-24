@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/layout'
 import css from '../styles/blog.module.less'
 
@@ -14,6 +14,9 @@ export default () => {
               date
             }
             excerpt
+            fields {
+              slug
+            }
           }
         }
       }
@@ -22,13 +25,15 @@ export default () => {
 
   const posts = postsRes.allMarkdownRemark.edges
     .map(edge => {
-      const { frontmatter, excerpt } = edge.node
+      const { frontmatter, excerpt, fields } = edge.node
       const { title, date } = frontmatter
       return (
-        <li className={css.post}>
-          <h4>{title}</h4>
-          <p className={css.post__date}>{date}</p>
-          <p className={css.post__excerpt}>{excerpt}</p>
+        <li key={fields.slug} className={css.post}>
+          <Link to={`/blog/${fields.slug}`}>
+            <h4>{title}</h4>
+            <p className={css.post__date}>{date}</p>
+            <p className={css.post__excerpt}>{excerpt}</p>
+          </Link>
         </li>
       )
     })
